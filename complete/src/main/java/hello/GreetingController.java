@@ -25,7 +25,7 @@ public class GreetingController {
     }
     
     @RequestMapping("/matlabUpdate")
-    public String MatlabUpdate(){
-    	 return "Tobi ist super";
+    public UpdateRespond MatlabUpdate(@RequestParam(value="test", defaultValue="test") String name){
+    	 return new UpdateRespond(String.format(template, name));
     }
 }
